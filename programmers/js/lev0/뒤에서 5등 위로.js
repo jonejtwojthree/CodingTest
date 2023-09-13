@@ -1,0 +1,7 @@
+function solution(num_list) {
+  return (answer = num_list
+    .sort((a, b) => {
+      return a - b;
+    })
+    .slice(5));
+}
