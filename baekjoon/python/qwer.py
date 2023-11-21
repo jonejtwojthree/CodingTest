@@ -1,2 +1,2 @@
 import math
-print(math.gcd(*[8,12,32,40]))
+print(math.gcd(*[8,12,32,40]))ㄴㅇ
