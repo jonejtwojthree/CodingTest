@@ -1,0 +1,21 @@
+큐 알고리즘
+
+1. from collection import deque
+
+deque는 선입선출 이지만 압뒤로 입출력이 모두 가능
+
+from collection import deque
+q = deque([1,2,3])
+
+q.append(item)
+q.appendleft(item)
+
+q.pop()
+q.popleft(item)
+
+q.extend(배열)
+
+q.remove(item)
+
+q.rotate(숫자)
+양수: 시계방향, 음수: 반시계

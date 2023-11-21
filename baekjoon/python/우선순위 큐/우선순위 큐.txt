@@ -1,0 +1,48 @@
+우선순위 큐, 힙 알고리즘
+
+우선순위 큐란?
+우선순위 큐는 먼저 들어온 데이터가 먼저 처리되는 일반적인 큐와 달리, 우선순위가 높은 데이터부터 처리되는 자료구조이다. 배열, 연결리스트, 힙(Heap)으로 모두 구현할 수 있지만 일반적으로는 시간복잡도가 적은 힙(Heap)을 사용한다.
+ 
+
+힙(Heap)
+최솟값, 최댓값을 찾아내는 연산을 빠르게하기 위해 고안된 완전이진 트리의 일종인 자료구조이다. 힙은 최소 힙과 최대 힙으로 구분할 수 있다.
+
+- 최소 힙: 루트노드가 가장 작은 값을 가지며, 항상 부모노드는 자식노드보다 작은 값을 가짐
+
+우선순위 큐, 힙은 거의 같다고 볼 수 있음
+
+1. import heap
+
+2. import queue
+queue.priority_queue 사용 가능
+
+둘 차이
+-> heapq는 싱글스레드전용
+-> queue.priority_queue는 멀티 쓰레드 전용
+
+-> 코테는 heapq사용이 바람직
+
+from heapq import heappush, heappop, heapify
+
+# 추가
+# 추가할때 우선순위 조건을 줄 수 있음
+heappush(heap, 4)
+heappush(heap, 1)
+print(heap)
+
+nums = [4, 1, 7, 3, 8, 5]
+heap = []
+for num in nums: # 작은값이 우선순위 임
+  heappush(heap, (-num, num))  # (우선 순위, 값(우선순위1, 우선순위2))
+
+while heap:
+  print(heappop(heap)[1])  # index 1
+
+
+print(heappop(heap))
+print(heap)
+
+# 리스트를 힙으로 변환
+heap = [4, 1, 7, 3, 8, 5]
+heapify(heap)
+print(heap)
