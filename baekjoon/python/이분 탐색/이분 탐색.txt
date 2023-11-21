@@ -1,0 +1,38 @@
+이분 탐색 / 이진 탐색 (Binary Search)
+
+정렬되어 있는 리스트
+에서 탐색 범위를 절반씩 좁혀가며 데이터를 탐색하는 방법이다.
+
+변수 3개(start, end, mid)를 사용하여 탐색한다. 찾으려는 데이터와 중간점 위치에 있는 데이터를 반복적으로 비교해서 원하는 데이터를 찾는 것이 이진 탐색의 과정이다.
+
+
+##############################
+lst.sort()
+
+start=0
+end=len(lst)
+
+while start<=end:
+    mid = (start+end)//2
+    
+    if lst[mid] == num:
+        break
+
+    if num < lst[mid]:
+        end = mid-1 # mid에 -1을 해주는 것이 포인트
+    else:
+        start = mid+1
+
+##############################
+bisect를 이용한 구현
+ 
+bisect_left(literable, value) : 왼쪽 인덱스를 구하기
+bisect_right(literable, value) : 오른쪽 인덱스를 구하기
+
+from bisect import bisect_left, bisect_right
+
+lst.sort()
+bisect_left(lst, num) -> 만족하는 num 값 중 가장 왼쪽 인덱스값 반환
+bisect_right(lst, num) -> 만족하는 num 값 중 가장 오른쪽 인덱스값 반환
+
+num값이 lst에 없으면 가장 num보다 큰갑중에 가장 가까운 값을 가진 인덱스값 반환
